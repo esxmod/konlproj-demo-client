@@ -18,7 +18,7 @@ export const fetchPredict = createAsyncThunk(
   'home/getPredict',
   async (query: string) => {
     const response = await getPredict(query);
-    return response.result;
+    return response.data.result;
   },
 );
 
