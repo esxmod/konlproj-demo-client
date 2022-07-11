@@ -20,7 +20,7 @@ function TextArea({ setValue }: TextAreaProps) {
     }
 
     timeoutId.current = window.setTimeout(() => {
-      setValue(value);
+      setValue(value.trim());
     }, 300);
   };
 
