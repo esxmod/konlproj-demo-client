@@ -6,8 +6,6 @@ import { selectHome, fetchPredict, resetRequest } from '../reducers/home';
 export interface HomeContainerProps {}
 
 function HomeContainer(props: HomeContainerProps) {
-  console.debug('+ HomeContainer');
-
   const dispatch = useAppDispatch();
   const home = useAppSelector(selectHome);
   const [query, setQuery] = useState('');

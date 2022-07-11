@@ -6,8 +6,6 @@ export interface TextAreaProps {
 }
 
 function TextArea({ setValue }: TextAreaProps) {
-  console.debug('- TextArea')
-
   const timeoutId = useRef(0);
 
   const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {

@@ -5,8 +5,6 @@ import { Header, Footer, Breadcrumb } from '../components';
 export interface AboutPageProps {}
 
 function AboutPage(props: AboutPageProps) {
-  console.debug('AboutPage')
-
   return (
     <Layout>
       <Header />

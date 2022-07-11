@@ -18,8 +18,6 @@ export interface ErrorTemplateProps {
 }
 
 function ErrorTemplate({ status }: ErrorTemplateProps) {
-  console.debug('- ErrorTemplate')
-
   const navigate = useNavigate();
 
   return (

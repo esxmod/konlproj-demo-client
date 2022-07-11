@@ -20,8 +20,6 @@ const items: MenuProps['items'] = [
 ];
 
 function Header(props: HeaderProps) {
-  console.debug('- Header');
-
   const { pathname } = useLocation();
 
   return (
