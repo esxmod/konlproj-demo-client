@@ -7,8 +7,6 @@ export interface BreadcrumbProps {
 }
 
 function Breadcrumb_({ path }: BreadcrumbProps) {
-  console.debug('- Breadcrumb')
-  
   return (
     <Breadcrumb>
       <Breadcrumb.Item>

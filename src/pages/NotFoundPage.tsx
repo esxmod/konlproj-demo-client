@@ -5,8 +5,6 @@ import { ErrorTemplate } from '../components';
 export interface NotFoundPageProps {}
 
 function NotFoundPage(props: NotFoundPageProps) {
-  console.debug('NotFoundPage');
-
   return (
     <Layout>
       <Layout.Content>

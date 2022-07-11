@@ -46,3 +46,17 @@
 .ant-layout-footer {
     text-align: center;
 }
+
+@media all and (max-width:575px) {
+    .ant-layout-content {
+        padding: 0px;
+    }
+
+    .ant-layout-content .ant-breadcrumb {
+        margin-left: 16px;
+    }
+
+    .ant-layout-content .main-container {
+        padding: 16px;
+    }
+}

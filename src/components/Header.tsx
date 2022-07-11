@@ -9,18 +9,18 @@ interface MenuOrderProps {
   [index: string]: string;
 }
 
-function Header(props: HeaderProps) {
-  console.debug('- Header')
+const orders: MenuOrderProps = {
+  '/': '1',
+  '/about': '2',
+};
 
+const items: MenuProps['items'] = [
+  { key: '1', label: <Link to='/'>KoSA</Link> },
+  { key: '2', label: <Link to='/about'>About</Link> },
+];
+
+function Header(props: HeaderProps) {
   const { pathname } = useLocation();
-  const orders: MenuOrderProps = {
-    '/': '1',
-    '/about': '2',
-  };
-  const items: MenuProps['items'] = [
-    { key: '1', label: <Link to='/'>KoSA</Link> },
-    { key: '2', label: <Link to='/about'>About</Link> },
-  ];
 
   return (
     <Layout.Header>

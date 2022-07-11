@@ -16,8 +16,6 @@ export interface ResultProps {
 }
 
 function Result_({ state: { result, status }, query }: ResultProps) {
-  console.debug('- Result');
-
   let icon: JSX.Element = <></>;
   let text: string = '';
 
