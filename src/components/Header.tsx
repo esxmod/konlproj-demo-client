@@ -11,12 +11,12 @@ interface MenuOrderProps {
 
 const orders: MenuOrderProps = {
   '/': '1',
-  '/about': '2',
+  '/sa': '2',
 };
 
 const items: MenuProps['items'] = [
-  { key: '1', label: <Link to='/'>KoSA</Link> },
-  { key: '2', label: <Link to='/about'>About</Link> },
+  { key: '1', label: <Link to='/'>Home</Link> },
+  { key: '2', label: <Link to='/sa'>Sentiment Analysis</Link> },
 ];
 
 function Header(props: HeaderProps) {

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Layout } from 'antd';
 import { Header, Footer, Breadcrumb } from '../components';
-import { HomeContainer } from '../containers';
 
 export interface HomePageProps {}
 
@@ -10,8 +9,8 @@ function HomePage(props: HomePageProps) {
     <Layout>
       <Header />
       <Layout.Content>
-        <Breadcrumb path={['KoSA']} />
-        <HomeContainer />
+        <Breadcrumb path={['Home']} />
+        <div className='main-container'>{'Welcome to KoNLProj demo page'}</div>
       </Layout.Content>
       <Footer />
     </Layout>

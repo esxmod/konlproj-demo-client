@@ -1,3 +1,3 @@
-import homeReducer from './home';
+import saReducer from './sa';
 
-export { homeReducer };
+export { saReducer };

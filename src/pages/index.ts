@@ -1,5 +1,5 @@
 import HomePage from './HomePage';
-import AboutPage from './AboutPage';
+import SAPage from './SAPage';
 import NotFoundPage from './NotFoundPage';
 
-export { HomePage, AboutPage, NotFoundPage };
+export { HomePage, SAPage, NotFoundPage };

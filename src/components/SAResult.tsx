@@ -8,14 +8,14 @@ import {
   ExclamationCircleOutlined,
 } from '@ant-design/icons';
 import { classify } from '../lib/utils';
-import { HomeState } from '../reducers/home';
+import { SAState } from '../reducers/sa';
 
-export interface ResultProps {
-  state: HomeState;
+export interface SAResultProps {
+  state: SAState;
   query?: string;
 }
 
-function Result_({ state: { result, status }, query }: ResultProps) {
+function SAResult({ state: { result, status }, query }: SAResultProps) {
   let icon: JSX.Element = <></>;
   let text: string = '';
 
@@ -39,4 +39,4 @@ function Result_({ state: { result, status }, query }: ResultProps) {
   return <Result icon={icon} title={text} />;
 }
 
-export default React.memo(Result_);
+export default React.memo(SAResult);

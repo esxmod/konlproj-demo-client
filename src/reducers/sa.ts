@@ -1,29 +1,29 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { RootState } from '../app/store';
-import { getPredict } from '../lib/api/predict';
+import { getPredictSA } from '../lib/api/predict';
 
-export interface HomeState {
+export interface SAState {
   query: string;
   result: number[];
   status: 'idle' | 'loading' | 'failed' | 'done';
 }
 
-const initialState: HomeState = {
+const initialState: SAState = {
   query: '',
   result: [],
   status: 'idle',
 };
 
-export const fetchPredict = createAsyncThunk(
-  'home/getPredict',
+export const fetchPredictSA = createAsyncThunk(
+  'sa/getPredictSA',
   async (query: string) => {
-    const response = await getPredict(query);
+    const response = await getPredictSA(query);
     return response.data.result;
   },
 );
 
-export const homeSlice = createSlice({
-  name: 'home',
+export const saSlice = createSlice({
+  name: 'sa',
   initialState,
   reducers: {
     resetRequest: (state) => {
@@ -32,22 +32,22 @@ export const homeSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(fetchPredict.pending, (state) => {
+      .addCase(fetchPredictSA.pending, (state) => {
         state.status = 'loading';
       })
-      .addCase(fetchPredict.fulfilled, (state, action) => {
+      .addCase(fetchPredictSA.fulfilled, (state, action) => {
         state.status = 'done';
         state.result = action.payload;
         state.query = action.meta.arg;
       })
-      .addCase(fetchPredict.rejected, (state) => {
+      .addCase(fetchPredictSA.rejected, (state) => {
         state.status = 'failed';
       });
   },
 });
 
-export const { resetRequest } = homeSlice.actions;
+export const { resetRequest } = saSlice.actions;
 
-export const selectHome = (state: RootState) => state.home;
+export const selectSA = (state: RootState) => state.sa;
 
-export default homeSlice.reducer;
+export default saSlice.reducer;

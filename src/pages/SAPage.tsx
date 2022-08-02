@@ -1,20 +1,21 @@
 import React from 'react';
 import { Layout } from 'antd';
 import { Header, Footer, Breadcrumb } from '../components';
+import { SAContainer } from '../containers';
 
-export interface AboutPageProps {}
+export interface SAPageProps {}
 
-function AboutPage(props: AboutPageProps) {
+function SAPage(props: SAPageProps) {
   return (
     <Layout>
       <Header />
       <Layout.Content>
-        <Breadcrumb path={['About']} />
-        <div className='main-container'>{'AboutPage'}</div>
+        <Breadcrumb path={['Sentiment Analysis']} />
+        <SAContainer />
       </Layout.Content>
       <Footer />
     </Layout>
   );
 }
 
-export default AboutPage;
+export default SAPage;
