@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { RootState } from '../app/store';
-import { getPredictSA } from '../lib/api/predict';
+import { predictSA } from '../lib/api/predict';
 
 export interface SAState {
   query: string;
@@ -14,10 +14,10 @@ const initialState: SAState = {
   status: 'idle',
 };
 
-export const fetchPredictSA = createAsyncThunk(
-  'sa/getPredictSA',
+export const fetchPredict = createAsyncThunk(
+  'sa/predict',
   async (query: string) => {
-    const response = await getPredictSA(query);
+    const response = await predictSA(query);
     return response.data.result;
   },
 );
@@ -32,15 +32,15 @@ export const saSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(fetchPredictSA.pending, (state) => {
+      .addCase(fetchPredict.pending, (state) => {
         state.status = 'loading';
       })
-      .addCase(fetchPredictSA.fulfilled, (state, action) => {
+      .addCase(fetchPredict.fulfilled, (state, action) => {
         state.status = 'done';
         state.result = action.payload;
         state.query = action.meta.arg;
       })
-      .addCase(fetchPredictSA.rejected, (state) => {
+      .addCase(fetchPredict.rejected, (state) => {
         state.status = 'failed';
       });
   },
@@ -48,6 +48,6 @@ export const saSlice = createSlice({
 
 export const { resetRequest } = saSlice.actions;
 
-export const selectSA = (state: RootState) => state.sa;
+export const selectState = (state: RootState) => state.sa;
 
 export default saSlice.reducer;

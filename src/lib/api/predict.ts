@@ -1,13 +1,13 @@
 import apiClient from './apiClient';
 
-export type getPredictSAResponse = { result: number[] };
+export type PredictSAResponse = { result: number[] };
 
-export const getPredictSA = (query: string) => {
-  return apiClient.post<getPredictSAResponse>('/api/predict/sa', { query });
+export const predictSA = (query: string) => {
+  return apiClient.post<PredictSAResponse>('/api/predict/sa', { query });
 };
 
-export type getPredictSumResponse = { result: string[] };
+export type PredictSumResponse = { result: string[] };
 
-export const getPredictSum = (query: string) => {
-  return apiClient.post<getPredictSumResponse>('/api/predict/sum', { query });
+export const predictSum = (query: string) => {
+  return apiClient.post<PredictSumResponse>('/api/predict/sum', { query });
 };

@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { RootState } from '../app/store';
-import { getPredictSum } from '../lib/api/predict';
+import { predictSum } from '../lib/api/predict';
 
 export interface SumState {
   query: string;
@@ -14,10 +14,10 @@ const initialState: SumState = {
   status: 'idle',
 };
 
-export const fetchPredictSum = createAsyncThunk(
-  'sum/getPredictSum',
+export const fetchPredict = createAsyncThunk(
+  'sum/predict',
   async (query: string) => {
-    const response = await getPredictSum(query);
+    const response = await predictSum(query);
     return response.data.result;
   },
 );
@@ -32,15 +32,15 @@ export const sumSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(fetchPredictSum.pending, (state) => {
+      .addCase(fetchPredict.pending, (state) => {
         state.status = 'loading';
       })
-      .addCase(fetchPredictSum.fulfilled, (state, action) => {
+      .addCase(fetchPredict.fulfilled, (state, action) => {
         state.status = 'done';
         state.result = action.payload;
         state.query = action.meta.arg;
       })
-      .addCase(fetchPredictSum.rejected, (state) => {
+      .addCase(fetchPredict.rejected, (state) => {
         state.status = 'failed';
       });
   },
@@ -48,6 +48,6 @@ export const sumSlice = createSlice({
 
 export const { resetRequest } = sumSlice.actions;
 
-export const selectSum = (state: RootState) => state.sum;
+export const selectState = (state: RootState) => state.sum;
 
 export default sumSlice.reducer;
