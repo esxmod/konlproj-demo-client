@@ -12,11 +12,13 @@ interface MenuOrderProps {
 const orders: MenuOrderProps = {
   '/': '1',
   '/sa': '2',
+  '/sum': '3',
 };
 
 const items: MenuProps['items'] = [
   { key: '1', label: <Link to='/'>Home</Link> },
   { key: '2', label: <Link to='/sa'>Sentiment Analysis</Link> },
+  { key: '3', label: <Link to='/sum'>Summarization</Link> },
 ];
 
 function Header(props: HeaderProps) {

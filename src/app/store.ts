@@ -1,9 +1,10 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import { saReducer } from '../reducers';
+import { saReducer, sumReducer } from '../reducers';
 
 export const store = configureStore({
   reducer: {
     sa: saReducer,
+    sum: sumReducer,
   },
 });
 
