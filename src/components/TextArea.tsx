@@ -3,9 +3,10 @@ import { Input } from 'antd';
 
 export interface TextAreaProps {
   setValue: Function;
+  placeholder?: string;
 }
 
-function TextArea({ setValue }: TextAreaProps) {
+function TextArea({ setValue, placeholder }: TextAreaProps) {
   const timeoutId = useRef(0);
 
   const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -24,7 +25,7 @@ function TextArea({ setValue }: TextAreaProps) {
 
   return (
     <Input.TextArea
-      placeholder='분석할 내용을 입력하세요.'
+      placeholder={placeholder || '내용을 입력하세요.'}
       size='large'
       maxLength={1000}
       autoSize={{ minRows: 5, maxRows: 10 }}

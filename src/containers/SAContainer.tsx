@@ -17,7 +17,7 @@ function SAContainer(props: SAContainerProps) {
 
   return (
     <div className='main-container'>
-      <TextArea setValue={setQuery} />
+      <TextArea setValue={setQuery} placeholder='분석할 내용을 입력하세요.' />
       <SAResult state={sa} query={query} />
     </div>
   );
