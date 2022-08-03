@@ -31,6 +31,7 @@
 .ant-layout-content {
     padding: 0 50px;
     margin-top: 64px;
+    overflow: auto;
 }
 
 .ant-layout-content .ant-breadcrumb {
@@ -40,7 +41,7 @@
 .ant-layout-content .main-container {
     background-color: #fff;
     padding: 24px;
-    min-height: 80vh;
+    min-height: 90%;
 }
 
 .ant-layout-footer {
@@ -58,5 +59,55 @@
 
     .ant-layout-content .main-container {
         padding: 16px;
+    }
+}
+
+.ant-input-textarea.ant-input-textarea-show-count {
+    margin-bottom: 20px;
+}
+
+.main-container .table {
+    display: table;
+    position: relative;
+    table-layout: fixed;
+    width: 100%;
+}
+
+.main-container .table .cell {
+    display: table-cell;
+    position: relative;
+    vertical-align: top;
+    width: 50%;
+}
+
+.main-container .table .cell.left {
+    padding-right: 5px;
+    padding-bottom: unset;
+}
+
+.main-container .table .cell.right {
+    padding-left: 5px;
+    padding-top: unset;
+}
+
+@media only screen and (max-width: 960px) {
+    .main-container .table {
+        display: block;
+    }
+
+    .main-container .table .cell {
+        display: block;
+        position: relative;
+        width: 100%;
+    }
+
+    .main-container .table .cell.left {
+        padding-right: unset;
+        padding-bottom: 10px;
+    }
+
+    .main-container .table .cell.right {
+        padding-left: unset;
+        padding-top: 10px;
     }
 }

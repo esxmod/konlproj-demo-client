@@ -1,5 +1,5 @@
 import React from 'react';
-import { Result, Divider } from 'antd';
+import { Result, Input } from 'antd';
 import {
   MessageOutlined,
   LoadingOutlined,
@@ -27,12 +27,13 @@ function SumResult({ state: { result, status }, query }: SumResultProps) {
     text = '서버가 아파요. ㅠㅠ';
   } else {
     return (
-      <>
-        <Divider orientation='left' orientationMargin={10}>
-          Output
-        </Divider>
-        <p>{result.join(' ')}</p>
-      </>
+      <Input.TextArea
+        value={result.join(' ')}
+        autoSize={{ minRows: 8, maxRows: 50 }}
+        readOnly
+        showCount
+        bordered={false}
+      />
     );
   }
 

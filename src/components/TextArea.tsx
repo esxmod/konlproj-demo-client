@@ -27,8 +27,8 @@ function TextArea({ setValue, placeholder }: TextAreaProps) {
     <Input.TextArea
       placeholder={placeholder || '내용을 입력하세요.'}
       size='large'
-      maxLength={1000}
-      autoSize={{ minRows: 5, maxRows: 10 }}
+      maxLength={5000}
+      autoSize={{ minRows: 8 }}
       onChange={handleChange}
       allowClear
       showCount

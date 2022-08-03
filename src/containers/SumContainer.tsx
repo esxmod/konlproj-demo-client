@@ -17,8 +17,17 @@ function SumContainer(props: SumContainerProps) {
 
   return (
     <div className='main-container'>
-      <TextArea setValue={setQuery} placeholder='요약할 내용을 입력하세요.' />
-      <SumResult state={state} query={query} />
+      <div className='table'>
+        <div className='cell left'>
+          <TextArea
+            setValue={setQuery}
+            placeholder='요약할 내용을 입력하세요.'
+          />
+        </div>
+        <div className='cell right'>
+          <SumResult state={state} query={query} />
+        </div>
+      </div>
     </div>
   );
 }
